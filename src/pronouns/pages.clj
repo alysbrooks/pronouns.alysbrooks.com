@@ -20,7 +20,8 @@
             [pronouns.util :as u]
             [hiccup.core :refer :all]
             [hiccup.element :as e]
-            [hiccup.util :refer [escape-html]]))
+            [hiccup.util :refer [escape-html]]
+            [environ.core :refer [env]]))
 
 (defn prose-comma-list
   [items]
@@ -106,7 +107,17 @@
      [:p "Written by "
          (twitter-name "morganastra")
          ", whose "
-         (href "https://pronoun.is/she" "pronoun.is/she")]
+         (href "/she" "pronoun is she")]
+     (when-let [instance-admin (:instance-admin-name env)]
+       [:p "This instance is run by "
+        (twitter-name instance-admin )
+        (when-let [instance-admin-pronouns (:instance-admin-pronouns env)]
+          [:span 
+           ", whose "
+           (href (str "/" instance-admin-pronouns) 
+                 (str "pronoun is " instance-admin-pronouns))])])
+      :p "pronoun.is is free software under the "
+         (href "https://www.gnu.org/licenses/agpl.html" "AGPLv3")
      [:p "pronoun.is is free software under the "
          (href "https://www.gnu.org/licenses/agpl.html" "AGPLv3")
          "! visit the project on "

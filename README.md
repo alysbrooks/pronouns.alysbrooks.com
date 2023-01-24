@@ -49,6 +49,10 @@ There are several ways to run pronoun.is yourself:
  environment variable, and run it using Java: `java -jar
  target/pronouns-standalone.jar`.
 
+To list your name and pronouns as the person responsible for the instance:
+* INSTANCE_ADMIN_NAME
+* INSTANCE_ADMIN_PRONOUNS
+
 ## For developers
 
 ### The database
