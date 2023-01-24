@@ -1,6 +1,6 @@
 # pronoun.is
 
-[pronoun.is](https://pronoun.is) is a website for personal pronoun usage examples. **This is Alys Brooks' fork of the main project.**
+[pronoun.is](https://pronoun.is) is a website for personal pronoun usage examples. **This is Alys Brooks' fork, live at [pronouns.alysbrooks.com](https://pronouns.alysbrooks.com). The upstream repository is [here](https://github.com/witch-house/pronoun.is).**
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
