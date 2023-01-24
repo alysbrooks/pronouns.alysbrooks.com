@@ -1,6 +1,6 @@
 # pronoun.is
 
-[pronoun.is](https://pronoun.is) is a website for personal pronoun usage examples
+[pronoun.is](https://pronoun.is) is a website for personal pronoun usage examples. **This is Alys Brooks' fork, live at [pronouns.alysbrooks.com](https://pronouns.alysbrooks.com). The upstream repository is [here](https://github.com/witch-house/pronoun.is).**
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
@@ -48,6 +48,10 @@ There are several ways to run pronoun.is yourself:
 * Finally, you can create an uberjar (`lein uberjar`), set the `PORT`
  environment variable, and run it using Java: `java -jar
  target/pronouns-standalone.jar`.
+
+To list your name and pronouns as the person responsible for the instance:
+* INSTANCE_ADMIN_NAME
+* INSTANCE_ADMIN_PRONOUNS
 
 ## For developers
 
