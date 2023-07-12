@@ -6,12 +6,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
+    - name: Build the Uberjar
+      uses: oxr463/setup-leiningen@0.0.1
+      with:
+       exec: lein uberjar 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag pronouns.alysbrooks.com:latest  --tag pronouns.alysbrooks.com:${{ github.ref_name }} --tag pronouns.alysbrooks.com:$(date +%s)
