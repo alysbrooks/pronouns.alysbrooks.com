@@ -15,9 +15,9 @@ jobs:
       with:
        java-version: 17
        distribution: 'temurin'
-    - name: Build the Uberjar
-      uses: oxr463/setup-leiningen@0.0.1
+    - name: Install clojure tools
+      uses: DeLaGuardo/setup-clojure@11.0
       with:
-       exec: lein uberjar 
+        lein: 2.9.1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag pronouns.alysbrooks.com:latest  --tag pronouns.alysbrooks.com:${{ github.ref_name }} --tag pronouns.alysbrooks.com:$(date +%s)
