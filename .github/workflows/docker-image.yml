@@ -22,7 +22,7 @@ jobs:
     - name: Build Uberjar
       run: lein uberjar
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag pronouns.alysbrooks.com:latest  --tag pronouns.alysbrooks.com:${{ github.ref_name }} --tag pronouns.alysbrooks.com:$(date +%s) --tag ghcr.io/alysbrooks/pronouns.alysbrooks.com:${{ github.sha}} --tag ghcr.io/alysbrooks/pronouns.alysbrooks.com:${{ github.ref_name }}
+      run: docker build . --file Dockerfile --tag pronouns.alysbrooks.com:latest  --tag pronouns.alysbrooks.com:${{ github.ref_name }} --tag pronouns.alysbrooks.com:$(date +%s) --tag ghcr.io/alysbrooks/pronouns.alysbrooks.com:${{ github.sha}}
     - name: Log in to GitHub's Container registry
       uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
       with:
@@ -30,6 +30,4 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish the Docker image
-      run: |
-           docker push ghcr.io/alysbrooks/pronouns.alysbrooks.com:${{ github.sha}}
-           docker push ghcr.io/alysbrooks/pronouns.alysbrooks.com:${{ github.ref_name }}
+      run: docker push ghcr.io/alysbrooks/pronouns.alysbrooks.com:${{ github.sha}}
