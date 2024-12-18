@@ -84,5 +84,5 @@
       params/wrap-params))
 
 (defn -main []
-  (let [port (Integer. (:port env))]
+  (let [port (Integer. (:port env "8081"))]
     (jetty/run-jetty app {:port port})))
