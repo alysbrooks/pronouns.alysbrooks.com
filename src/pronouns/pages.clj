@@ -70,6 +70,21 @@
                    (wrap-pronoun reflexive)
                    "."))
 
+(defn page-head [title description]
+  [:head
+   [:title title]
+   [:meta {:name "viewport" :content "width=device-width"}]
+   [:meta {:charset "utf-8"}]
+   [:meta {:name "description" :content description}]
+   ;; Twitter previews
+   [:meta {:name "twitter:card" :content "summary"}]
+   [:meta {:name "twitter:title" :content title}]
+   [:meta {:name "twitter:description" :content description}]
+   ;; Open graph
+   [:meta {:name "og:title" :content title}]
+   [:meta {:name "og:description" :content description}]
+   [:link {:rel "stylesheet" :href "/pronouns.css"}]])
+
 (defn header-block [header]
   [:div {:class "section title"}
    (href "/" [:h1 header])])
@@ -132,15 +147,7 @@
         examples (map #(apply examples-block %) pronoun-declensions)]
     (html
      [:html
-      [:head
-       [:title title]
-       [:meta {:name "viewport" :content "width=device-width"}]
-       [:meta {:charset "utf-8"}]
-       [:meta {:name "description" :content (u/strip-markup examples)}]
-       [:meta {:name "twitter:card" :content "summary"}]
-       [:meta {:name "twitter:title" :content title}]
-       [:meta {:name "twitter:description" :content (u/strip-markup examples)}]
-       [:link {:rel "stylesheet" :href "/pronouns.css"}]]
+      (page-head title (u/strip-markup examples))
       [:body
        (header-block title)
        examples
@@ -172,15 +179,7 @@
         description "Pronoun.is is a website for personal pronoun usage examples."]
     (html
      [:html
-      [:head
-       [:title title]
-       [:meta {:name "description" :content description}]
-       [:meta {:name "twitter:card" :content "summary"}]
-       [:meta {:name "twitter:title" :content title}]
-       [:meta {:name "twitter:description" :content description}]
-       [:meta {:name "viewport" :content "width=device-width"}]
-       [:meta {:charset "utf-8"}]
-       [:link {:rel "stylesheet" :href "/pronouns.css"}]]
+      (page-head title description)
       [:body
        (header-block title)
        [:div {:class "section table"}
@@ -193,14 +192,11 @@
 (defn all-pronouns []
   (let [abbreviations (u/abbreviate @pronouns-table)
         links (map make-link abbreviations)
-        title "Pronoun Island"]
+        title "Pronoun Island"
+        description "List of of all personal pronouns known by Pronoun.is"]
     (html
      [:html
-      [:head
-       [:title title]
-       [:meta {:name "viewport" :content "width=device-width"}]
-       [:meta {:charset "utf-8"}]
-       [:link {:rel "stylesheet" :href "/pronouns.css"}]]
+      (page-head title description)
       [:body
        (header-block title)
        [:div {:class "section table"}
@@ -213,11 +209,7 @@
         or-re #"/[oO][rR]/"]
     (html
      [:html
-      [:head
-       [:title title]
-       [:meta {:name "viewport" :content "width=device-width"}]
-       [:meta {:charset "utf-8"}]
-       [:link {:rel "stylesheet" :href "/pronouns.css"}]]
+      (page-head nil nil)
       [:body
        (header-block title)
        [:div {:class "section examples"}
