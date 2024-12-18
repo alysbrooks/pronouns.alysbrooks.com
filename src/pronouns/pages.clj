@@ -35,11 +35,9 @@
   [url text]
   [:a {:href url} text])
 
-;; FIXME morgan.astra <2018-11-14 Wed>
-;; use a div for this instead of a plain bold tag
 (defn wrap-pronoun
   [pronoun]
-  [:b pronoun])
+  [:em pronoun])
 
 (defn render-sentence [& content]
   [:p [:span.sentence content]])
