@@ -18,7 +18,7 @@
   (:require [clojure.string :as s]
             [pronouns.config :refer [pronouns-table]]
             [pronouns.util :as u]
-            [hiccup.core :refer :all]
+            [hiccup.page :refer [html5]]
             [hiccup.element :as e]
             [hiccup.util :refer [escape-html]]
             [environ.core :refer [env]]))
@@ -145,8 +145,8 @@
   (let [sub-objs (map #(s/join "/" (take 2 %)) pronoun-declensions)
         title (str "Pronoun Island: " (prose-comma-list sub-objs) " examples")
         examples (map #(apply examples-block %) pronoun-declensions)]
-    (html
-     [:html
+    (html5
+     [:html {:lang "en"}
       (page-head title (u/strip-markup examples))
       [:body
        (header-block title)
@@ -177,8 +177,8 @@
         links (map make-link abbreviations)
         title "Pronoun Island"
         description "Pronoun.is is a website for personal pronoun usage examples."]
-    (html
-     [:html
+    (html5
+     [:html {:lang "en"}
       (page-head title description)
       [:body
        (header-block title)
@@ -194,8 +194,8 @@
         links (map make-link abbreviations)
         title "Pronoun Island"
         description "List of of all personal pronouns known by Pronoun.is"]
-    (html
-     [:html
+    (html5
+     [:html {:lang "en"}
       (page-head title description)
       [:body
        (header-block title)
@@ -207,8 +207,8 @@
 (defn not-found [path]
   (let [title "Pronoun Island: English Language Examples"
         or-re #"/[oO][rR]/"]
-    (html
-     [:html
+    (html5
+     [:html {:lang "en"}
       (page-head nil nil)
       [:body
        (header-block title)
