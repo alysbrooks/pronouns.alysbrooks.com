@@ -129,12 +129,12 @@
            ", whose "
            (href (str "/" instance-admin-pronouns) 
                  (str "pronoun is " instance-admin-pronouns))])])
-      :p "pronoun.is is free software under the "
-         (href "https://www.gnu.org/licenses/agpl.html" "AGPLv3")
      [:p "pronoun.is is free software under the "
          (href "https://www.gnu.org/licenses/agpl.html" "AGPLv3")
-         "! visit the project on "
-         (href "https://github.com/witch-house/pronoun.is" "github")]
+         "! visit the original project on "
+         (href "https://github.com/witch-house/pronoun.is" "github")
+         " or the fork "
+         (href "https://github.com/alysbrooks/pronouns.alysbrooks.com/" "github") ]
      [:p "&lt;3"]]))
 
 (defn footer-block []
