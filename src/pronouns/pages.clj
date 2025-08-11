@@ -133,8 +133,8 @@
          (href "https://www.gnu.org/licenses/agpl.html" "AGPLv3")
          "! visit the original project on "
          (href "https://github.com/witch-house/pronoun.is" "github")
-         " or the fork "
-         (href "https://github.com/alysbrooks/pronouns.alysbrooks.com/" "github") ]
+         " or the fork on "
+         (href "https://github.com/alysbrooks/pronouns.alysbrooks.com/" "github") "." ]
      [:p "&lt;3"]]))
 
 (defn footer-block []
