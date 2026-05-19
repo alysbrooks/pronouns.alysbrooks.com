@@ -2,13 +2,14 @@
   :description "Pronoun.is is a website for personal pronoun usage examples"
   :url "https://pronoun.is"
   :license "GNU Affero General Public License 3.0"
-  :dependencies [[compojure "1.7.0"]
+  :dependencies [[compojure "1.7.2"]
                  [environ "1.1.0"]
-                 [com.lambdaisland/hiccup "0.0.33"]
+                 [com.lambdaisland/hiccup "0.14.67"]
                  [lambdaisland/ring.middleware.logger "0.5.1"]
                  [org.clojure/clojure "1.10.3"]
-                 [ring/ring-devel "1.7.1"]
-                 [ring/ring-jetty-adapter "1.7.1"]]
+                 ;; [ring/ring-core "1.15.1"]
+                 [ring/ring-devel "1.15.1"]
+                 [ring/ring-jetty-adapter "1.15.1"]]
   :min-lein-version "2.0.0"
   :main pronouns.web 
   :plugins [[environ/environ.lein "0.3.1"]
