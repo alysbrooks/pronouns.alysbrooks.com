@@ -1,3 +1,6 @@
+# 1.17.0
+
+* Bump dependencies
 
 # 1.16.0
 
