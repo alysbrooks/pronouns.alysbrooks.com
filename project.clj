@@ -8,8 +8,8 @@
                  [lambdaisland/ring.middleware.logger "0.5.1"]
                  [org.clojure/clojure "1.10.3"]
                  ;; [ring/ring-core "1.15.1"]
-                 [ring/ring-devel "1.15.1"]
-                 [ring/ring-jetty-adapter "1.15.1"]]
+                 [ring/ring-devel "1.15.6"]
+                 [ring/ring-jetty-adapter "1.15.6"]]
   :min-lein-version "2.0.0"
   :main pronouns.web 
   :plugins [[environ/environ.lein "0.3.1"]
