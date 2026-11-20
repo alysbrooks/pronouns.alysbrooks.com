@@ -16,7 +16,7 @@ jobs:
        java-version: 17
        distribution: 'temurin'
     - name: Install clojure tools
-      uses: DeLaGuardo/setup-clojure@11.0
+      uses: DeLaGuardo/setup-clojure@13.7.0
       with:
         lein: 2.9.1
     - name: Build Uberjar
